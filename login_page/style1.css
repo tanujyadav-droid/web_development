@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #c74747, #6a5acd, #ff9a9e, #4facfe);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.12); /* transparency */
+  backdrop-filter: blur(15px); /* glass blur */
+  -webkit-backdrop-filter: blur(15px); /* safari */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  color: white;
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  pointer-events: none;
+}
+h2 {
+  font-family: "Montserrat", "Poppins", "Segoe UI", sans-serif;
+  font-size: 22px;
+  font-weight: 300; /* thin text */
+  letter-spacing: 6px; /* wide spacing */
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 20px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 14px auto 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+
+  font-size: 14px;
+  outline: none;
+
+  transition: all 0.25s ease;
+  margin-bottom: 10px;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+input:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+.row-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.row-inputs input {
+  flex: 1;
+  box-sizing: border-box;
+  margin-bottom: 0; /* FIX */
+}
+.row-inputs input {
+  width: 100%;
+}
+/* Checkbox + forgot password row */
+.row-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.row-actions input[type="checkbox"] {
+  margin-right: 6px;
+}
+.forgot {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+.forgot:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.remember span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7); /* soft white */
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  /* Theme match */
+  background: linear-gradient(135deg, #ff6a6a, #ff4d6d);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  box-shadow: 
+    0 8px 20px rgba(255, 77, 109, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 28px rgba(255, 77, 109, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
