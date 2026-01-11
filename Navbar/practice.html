@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar-Document</title>
+    <style>
+      body {
+        background-color: #101828;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f0f0f0;
+      }
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #141d2d;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around;
+        align-items: center;
+      }
+      div form input {
+        background-color: #1b263d;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 300px;
+        color: #f0f0f0;
+      }
+      div form input:focus {
+        outline: 2px solid #0a65c7;
+      }
+      img {
+        width: 30px;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-content {
+        display: none;
+        background-color: #16233f;
+        position: absolute;
+        border-radius: 8px;
+        min-width: 150px;
+        top: 100%;
+        right: 0;
+        padding: 10px;
+        flex-direction: column;
+      }
+      div a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        border-radius: 8px;
+      }
+      div a:hover {
+        background-color: #283d6d;
+      }
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+      .search-box {
+        position: relative;
+        width: 350px;
+      }
+
+      .search-box i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #8a94a7;
+      }
+
+      .search-box input {
+        padding-left: 35px; /* gives space for icon */
+      }
+      .hover a{
+        position: relative;
+        text-decoration: none;
+        color: #7d889d;
+        display: inline-block;
+      }
+      .hover a::after{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: #17abe1;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      .hover a:hover::after{
+        transform: scaleX(1);
+      }
+      .hover a:hover{
+        color: #fff;
+      }
+
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="hover">
+          <li><img src="icons8-t-64 (1).png" alt="" /></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Calendar</a></li>
+        </ul>
+        <div>
+          <ul>
+            <li>
+              <form action="">
+                <div class="search-box">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" placeholder="Search" />
+                </div>
+              </form>
+            </li>
+            <li class="dropdown">
+              <img src="user.png" alt="" />
+              <div class="dropdown-content">
+                <a href="#">Your Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
