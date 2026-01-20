@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #0d0f14;
+  color: #eee;
+}
+
+/* main background container */
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(0,255,255,0.18), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,0,255,0.18), transparent 55%);
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px; /* enables 3D */
+}
+
+/* card styles */
+.content {
+  width: 400px;
+  background: rgba(25, 25, 25, 0.45);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+  text-align: center;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* CSS-based 3D hover */
+.content:hover {
+  transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.28);
+}
+
+/* card image */
+.content img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* font */
+@font-face {
+  font-family: "MgfElektrix";
+  src: url("./MgfElektrixWizardsPersonalUse-KVR9l.otf") format("opentype");
+}
+
+h1 {
+  font-family: "MgfElektrix", sans-serif;
+  margin: 12px 0 6px;
+  color: #00eaff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+p {
+  padding: 0 18px 10px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* button row */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 18px 18px;
+}
+
+/* buttons */
+a {
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #00eaff;
+  color: #00eaff;
+  transition: 0.2s;
+}
+
+a:hover {
+  background: #00eaff;
+  color: #0d0f14;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.8);
+}
